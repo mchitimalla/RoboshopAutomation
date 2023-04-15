@@ -12,4 +12,4 @@ systemctl daemon-reload
 systemctl enable user
 systemctl start user
 yum install mongodb-org-shell -y
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/user.js
+mongo --host 172.31.9.190 </app/schema/user.js
