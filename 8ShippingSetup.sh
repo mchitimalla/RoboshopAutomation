@@ -1,14 +1,9 @@
-cp shipping.service /etc/systemd/system/
-yum install maven -y
-useradd roboshop
-mkdir /app
-curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping.zip
-cd /app
-unzip /tmp/shipping.zip
-mvn clean package
-mv target/shipping-1.0.jar shipping.jar
-yum install mysql -y
-mysql -h 172.31.3.220 -uroot -pRoboShop@1 < /app/schema/shipping.sql
-systemctl daemon-reload
-systemctl enable shipping
-systemctl start shipping
+src_path=$(realpath $0)
+src_path=$(dirname $src_path)
+source "${src_path}"/Common.sh
+source "${src_path}"/CommonConfig.sh
+component=shipping
+schema_setup=mysql
+
+setupJava
+

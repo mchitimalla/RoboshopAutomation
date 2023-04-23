@@ -1,13 +1,7 @@
-cp dispatch.service /etc/systemd/system/
-yum install golang -y
-useradd roboshop
-mkdir /app
-curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip
-cd /app
-unzip /tmp/dispatch.zip
-go mod init dispatch
-go get
-go build
-systemctl daemon-reload
-systemctl enable dispatch
-systemctl start dispatch
+src_path=$(realpath $0)
+src_path=$(dirname $src_path)
+source "${src_path}"/Common.sh
+source "${src_path}"/CommonConfig.sh
+component=dispatch
+
+setupGolang
