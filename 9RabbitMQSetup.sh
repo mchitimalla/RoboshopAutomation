@@ -15,7 +15,7 @@ statusCheck $?
 printHeader "Install RabbitMQ Server"
 yum install rabbitmq-server -y &>>$logfile
 statusCheck $?
-funEnableService
+funcEnableService
 printHeader "Setup RabbitMQ User and Password"
 rabbitmqctl add_user "${rabbitmq_user}" "${rabbitmq_pwd}" &>>$logfile
 statusCheck $?
