@@ -4,16 +4,16 @@ source "${src_path}"/Common.sh
 source "${src_path}"/CommonConfig.sh
 component=nginx
 printHeader "InstallNginx"
-yum install nginx -y
+yum install nginx -y &>>$logfile
 statusCheck $?
-rm -rf /usr/share/nginx/html/*
+rm -rf /usr/share/nginx/html/* &>>$logfile
 statusCheck $?
-cp roboshop.conf /etc/nginx/default.d/
+cp roboshop.conf /etc/nginx/default.d/ &>>$logfile
 statusCheck $?
-curl -o /tmp/frontend.zip "${frontend_code_url}"
+curl -o /tmp/frontend.zip "${frontend_code_url}" &>>$logfile
 statusCheck $?
-cd /usr/share/nginx/html
-unzip /tmp/frontend.zip
+cd /usr/share/nginx/html &>>$logfile
+unzip /tmp/frontend.zip &>>$logfile
 statusCheck $?
 funcEnableService
 statusCheck $?

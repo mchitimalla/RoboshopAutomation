@@ -17,11 +17,11 @@ printHeader() {
 statusCheck() {
   if [ $1 -eq 0 ]
   then
-    echo "\e[35mSUCCESS!!!!\e[0m"
-    echo "\e[35mSUCCESS!!!!\e[0m" &>>${logfile}
+    echo "\e[35m SUCCESS!!!!\e[0m"
+    echo "\e[35m SUCCESS!!!!\e[0m" &>>${logfile}
   else
-    echo "\e[32mFAILURE!!!!\e[0m"
-    echo "\e[32mFAILURE!!!!\e[0m" &>>${logfile}
+    echo "\e[32m FAILURE!!!!\e[0m"
+    echo "\e[32m FAILURE!!!!\e[0m" &>>${logfile}
     exit
   fi
 }
