@@ -28,7 +28,7 @@ statusCheck() {
 setupSchema() {
   if [ "$schema_setup" == "mongo" ]; then
     printHeader "Copy MongoDB repo"
-    cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo &>>${logfile}
+    cp "${src_path}"/mongo.repo /etc/yum.repos.d/mongo.repo &>>${logfile}
     statusCheck $?
 
     printHeader "Install MongoDB Client"
