@@ -4,7 +4,7 @@ source "${src_path}"/Common.sh
 source "${src_path}"/CommonConfig.sh
 component=mongod
 printHeader "Setup Mongo Repo"
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp "${src_path}"/mongo.repo /etc/yum.repos.d/mongo.repo
 statusCheck $?
 printHeader "Install Mongodb"
 yum install mongodb-org -y &>>$logfile
