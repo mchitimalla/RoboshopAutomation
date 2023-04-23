@@ -109,7 +109,7 @@ setupPython(){
   printHeader "Install Python Dependencies"
   pip3.6 install -r requirements.txt &>>$logfile
   statusCheck $?
-  cp "${component}".service /etc/systemd/system/ &>>$logfile
+  cp "${src_path}"/"${component}".service /etc/systemd/system/ &>>$logfile
   systemctl daemon-reload
   funcEnableService
 }
