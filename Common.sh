@@ -44,7 +44,7 @@ setupSchema() {
     statusCheck $?
 
     printHeader "Load Schema"
-    mysql -h "${mysql_url}" -u"${mysqluser}" -p"${mysqlpwd}" < /app/schema/shipping.sql &>>${logfile}
+    mysql -h "${mysql_url}" -u"${mysql_user}" -p"${mysql_pwd}" < /app/schema/"${component}".sql &>>${logfile}
     statusCheck $?
   fi
 }
