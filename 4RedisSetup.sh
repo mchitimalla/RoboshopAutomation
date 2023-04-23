@@ -12,7 +12,7 @@ yum install redis -y &>>$logfile
 statusCheck $?
 printHeader "Update Redis Listen Address"
 #Update listening address to 0.0.0.0 in /etc/redis.conf
-sed -i 's|127.0.0.1|0.0.0.0|' /etc/redis.conf &>>$logfile
+sed -i 's|127.0.0.1|0.0.0.0|' /etc/redis.conf /etc/redis/redis.conf &>>$logfile
 statusCheck $?
 funcEnableService
 statusCheck $?
