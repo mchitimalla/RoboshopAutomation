@@ -119,7 +119,7 @@ setupGolang(){
   yum install golang -y &>>$logfile
   statusCheck $?
   func_app_prereq
-  printHeader"Install App Dependencies"
+  printHeader "Install App Dependencies"
   go mod init "${component}" &>>$logfile
   statusCheck $?
   go get &>>$logfile
